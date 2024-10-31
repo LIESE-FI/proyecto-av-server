@@ -1,0 +1,13 @@
+[Unit]
+Description=MQTT Client Service
+After=network.target
+
+[Service]
+ExecStart=/opt/mqtt_client/venv/bin/python /opt/mqtt_client/mqtt_client.py
+WorkingDirectory=/opt/mqtt_client
+Restart=always
+User=your_username
+Group=your_usergroup
+
+[Install]
+WantedBy=multi-user.target
